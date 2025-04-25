@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+
+body {
+    background-color: rgb(48, 39, 39); 
+}
+
+/*Navigation*/
+div.navibar {
+    display: flex;
+    background-color: #57031a;
+    height: 7%;
+    min-height: 48px;
+    max-height: 192px;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    flex-direction: row;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+@keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(.9);
+    }
+    100% {
+      transform: scale(1);
+    }
+}
+
+div.navibutton {
+    display: flex;
+    height: 100%;
+    width: 10%;
+    min-width: 48px;
+    max-width: 384px;
+    position: sticky;
+}
+
+img.navbutt {
+    height: 100%;
+    transition: 0.5s;
+    margin: auto;
+}
+
+img.navbutt:hover {
+    animation: pulse 1s infinite;
+}
+
+div.naviblock {
+    display: flex;
+    height: 100%;
+    width: 15%;
+    min-width: 48px;
+    max-width: 384px;
+    position: sticky;
+}
+
+div.naviblock:hover {
+    background-color: #7d0527;
+    opacity: 80%;
+}
+
+a.navlink {
+    margin: auto;
+    text-align: center;
+    text-decoration: none;
+    font-size: clamp(.5rem, 2vw, 1.5rem);
+    color:  rgb(245, 241, 241);
+    display: block;
+    /* transition: 0.3s; */
+    font-family:'Pixelify Sans', sans-serif;
+}
+
+/* 404 page */
+
+div.pg404 {
+    margin-top: 10%;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1%;
+    display: flex;
+    background-color: #57031a;
+    position: sticky;
+    width: 50%;
+    height: 50%;
+    flex-direction: row;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    border: #57031a;
+    border-radius: 5%;
+}
+
+div.img404 {
+    display: flex;
+    height: 80%;
+    width: 50%;
+    position: sticky;
+    object-fit: contain;
+    background-color: rgb(245, 241, 241);
+    border: #57031a;
+    border-radius: 5%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+img.image404 {
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    animation: slide .5s infinite;
+    transition: 0.5s;
+}
+
+@keyframes slide {
+    0% {
+      transform: translate(0px, 0px);
+    }
+    50% {
+      transform: translate(0px, -40px);
+    }
+    100% {
+      transform: translate(0px, 0px);
+    }
+}
+
+div.message {
+    display: flex;
+    height: 80%;
+    width: 50%;
+    position: sticky;
+    border: #57031a;
+    border-radius: 5%;
+    align-items: center;
+}
+
+p.mess404 {
+    text-align: center;
+    font-size: 3rem;
+    color:  rgb(245, 241, 241);
+    display: block;
+    transition: 0.3s;
+    font-family:'Pixelify Sans', sans-serif;
+}
+
+/* Main Page */
+
+div.mainbig {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    position: sticky;
+    flex-direction: row;
+    overflow-x: hidden;
+    background-color: rgb(48, 39, 39);
+}
+
+div.mainleft {
+    display: block;
+    height: 100%;
+    width: 20%;
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+}
+
+div.mainright {
+    display: block;
+    height: 100%;
+    width: 20%;
+    overflow: hidden;
+    position: fixed;
+    right: 0;
+}
+
+img.mainleft {
+    height: 100%;
+    width: 100%;
+    visibility: block;
+}
+
+div.mainCon {
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    padding-top: clamp(48px, 2.5vw, 192px);
+    height: 100%;
+    width: 60%;
+    background-color: rgb(56, 44, 44);
+    left: 20%;
+    right: 20%;
+}
+
+div.aboutMe {
+    display: flex;
+    flex-direction: row;
+    position: sticky;
+    height: 23%;
+    min-height: 96px;
+    max-height: 384px;
+    width: 100%;
+    padding: clamp(12px, 5vw, 96px);
+}
+
+div.aboutmetxt {
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    height: 100%;
+    width: 50%;
+}
+
+div.aboutmeimg {
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    height: 100%;
+    width: 50%;
+    min-width: 96px;
+    max-width: 384px;
+}
+
+img.aboutmeimg {
+    height: 100%;
+    width: 70%;
+}
+
+div.education {
+    display: flex;
+    flex-direction: row;
+    position: sticky;
+    height: 20%;
+    min-height: 96px;
+    max-height: 384px;
+    width: 100%;
+    padding: clamp(12px, 5vw, 96px);
+}
+
+div.projects {
+    display: flex;
+    flex-direction: row;
+    position: sticky;
+    height: 20%;
+    min-height: 96px;
+    max-height: 384px;
+    width: 100%;
+    padding: clamp(12px, 5vw, 96px);
+}
+
+div.certifications {
+    display: flex;
+    flex-direction: row;
+    position: sticky;
+    height: 20%;
+    min-height: 96px;
+    max-height: 768px;
+    width: 100%;
+    padding: clamp(12px, 5vw, 96px);
+}
+
+div.timeline {
+    display: flex;
+    flex-direction: row;
+    position: sticky;
+    height: 20%;
+    min-height: 96px;
+    max-height: 384px;
+    width: 100%;
+    padding: clamp(12px, 5vw, 96px);
+}
+
+p.home {
+    font-family:'Pixelify Sans', sans-serif;
+    color:  rgb(245, 241, 241);
+    
+}
+
+h1 {
+    font-family:'Pixelify Sans', sans-serif;
+    color:  rgb(245, 241, 241);
+
+}
+
+h2 {
+    font-family:'Pixelify Sans', sans-serif;
+    color:  rgb(245, 241, 241);
+}

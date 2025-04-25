@@ -1,0 +1,17 @@
+doctype html 
+html(lang="en") 
+  head 
+    meta(charset='UTF-8')
+    block title 
+    link(rel='stylesheet', href='/public/CSS/main-style.css')
+    link(rel='icon' type='image/png' href='/public/Images/RedPanda.png')
+    include navigation.pug
+  body 
+    +navi()
+    div.mainbig
+      div.mainleft
+        img.mainleft(src='/public/Images/Side_left.png' alt='temp')
+      div.mainCon
+        block content
+      div.mainright
+        img.mainleft(src='/public/Images/Side_right.png' alt='temp')  

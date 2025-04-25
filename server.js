@@ -7,11 +7,7 @@ app.set('view engine', 'pug');
 
 const port = process.env.PORT || 4000 
 app.use('/public', express.static(path.join(__dirname, 'public')));
-// app.use('/public', express.static('public/Audio'));
-// app.use('/public', express.static('public/CSS'));
-// app.use('/public', express.static('public/Images'));
-// app.use('/public', express.static('public/Javascript'));
-// app.use('/public', express.static('public/Template'));
+const { list } = require('./public/Extra/projectlist.js');
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -33,7 +29,22 @@ app.get('/Education', (req, res) =>{
 });
 
 app.get('/Projects', (req, res) =>{
-    res.render('Projects.pug');
+    res.render('Projects.pug', {list : list});
+});
+
+app.get('/Projects/:name', (req, res) =>{
+    const name = req.params.project;
+    let project = {};
+    for (let item of list) {
+        if (item.project === name){
+            project = item;
+        }
+    }
+    if (project == {}){
+        return res.redirect('/404');
+    }
+    
+    res.render('Project.pug', {list : list});
 });
 
 app.get('/Certifications', (req, res) =>{

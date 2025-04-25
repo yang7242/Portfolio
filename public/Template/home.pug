@@ -6,13 +6,13 @@ block content
     div.aboutmetxt
       h1 About Me
       p.home Hello, I'm Maixiong Yang! 
-      audio(controls='') 
-        source(src='/public/Audio/pronounce.mp3', type='audio/mpeg')
       p.home I'm a 22 year old programmer and IT enthusiast.
       p.home I enjoy problem-solving, whether with my tech or with fun puzzles.
       p.home You can contact me at maixiong.yang412@gmail.com for more inquries!
     div.aboutmeimg
       img.aboutmeimg(src='/public/Images/me3.jpg' alt='me')
+      audio(controls='') 
+        source(src='/public/Audio/pronounce.mp3', type='audio/mpeg')
   div.education
     div.educationtxt
       h1 Education
@@ -21,7 +21,14 @@ block content
   div.projects
     div.projectchart
       h1 Projects
-      p.home pp poo poo
+      table
+        thead
+          tr
+            th Project Name 
+            th Quick Description 
+            th Progress
+        tbody 
+          
     div.projectsneak
   div.certifications
     div.certtxt

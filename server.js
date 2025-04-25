@@ -5,7 +5,7 @@ const app = express();
 app.set('views', 'public/Template');
 app.set('view engine', 'pug');
 
-const port = 7242;
+const port = process.env.PORT || 4000 
 app.use('/public', express.static(path.join(__dirname, 'public')));
 // app.use('/public', express.static('public/Audio'));
 // app.use('/public', express.static('public/CSS'));

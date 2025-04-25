@@ -32,19 +32,20 @@ app.get('/Projects', (req, res) =>{
     res.render('Projects.pug', {list : list});
 });
 
-app.get('/Projects/:name', (req, res) =>{
+app.get('/Projects/:project', (req, res) =>{
     const name = req.params.project;
+    console.log(name);
     let project = {};
     for (let item of list) {
-        if (item.project === name){
+        if (item.project === decodeURIComponent(name)){
             project = item;
         }
     }
-    if (project == {}){
+    if (Object.keys(project).length === 0){
         return res.redirect('/404');
     }
     
-    res.render('Project.pug', {list : list});
+    res.render('Project.pug', {q : project});
 });
 
 app.get('/Certifications', (req, res) =>{
@@ -53,6 +54,10 @@ app.get('/Certifications', (req, res) =>{
 
 app.get('/WorkTimeline', (req, res) =>{
     res.render('Timeline.pug');
+});
+
+app.get('/404', (req, res) =>{
+    res.render('404.pug');
 });
 
 app.use((req, res, next)=>{

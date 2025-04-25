@@ -1,5 +1,8 @@
 extends master.pug
 block title  
-  title= list.title
+  title= q.project
 block content
-    p pp poo poo
+  div.overview
+    h1= q.project 
+    div.description
+      p.description= q.description

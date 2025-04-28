@@ -9,6 +9,7 @@ block content
       p.home I'm a 22 year old programmer and IT enthusiast.
       p.home I enjoy problem-solving, whether with my tech or with fun puzzles.
       p.home You can contact me at maixiong.yang412@gmail.com for more inquries!
+      a.linkedin(href="https://www.linkedin.com/in/maixiong-yang/") My LinkedIn
     div.aboutmeimg
       img.aboutmeimg(src='/public/Images/me3.jpg' alt='me')
       audio(controls='') 
@@ -16,28 +17,27 @@ block content
   div.education
     div.educationtxt
       h1 Education
-      p.home I'm an undergraduate at the University of Minnesota Twin Cities.
-      p.home There, I majored in Computer Science and graduated in December of 2024.
+      p.home I'm a recent graduate from the University of Minnesota - Twin Cities, where I earned my Bachelor of Arts in Computer Science in December 2024. 
+      p.home Throughout my academic career, I built a strong foundation in software development, algorithms, and data structures, while gaining hands-on experience with both front-end and back-end technologies.
   div.projects
     div.projectchart
       h1 Projects
-      table
-        thead
-          tr
-            th Project Name 
-            th Quick Description 
-            th Progress
-        tbody 
-          
-    div.projectsneak
+      - var completed = false
+      ul
+        each project in list 
+          if project.progress == 'Complete'
+            - completed = true
+            li= project.project
+        if !completed
+          li N/A
   div.certifications
     div.certtxt
-      h1 Certifications
-      h2 Looking at:
-      h2 In Progress:
-      p.home Comptia A+
-      h2 Completed:
-  div.timeline
-    div.line
-      h1 Timeline
-      p.home Currently working on it
+      h1 Completed Certifications
+      - var hasCompleted = false
+      ul
+        each cert in certlist
+          if cert.progress == 'Complete'
+            - hasCompleted = true
+            li= cert.title
+        if !hasCompleted
+          li N/A

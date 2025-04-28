@@ -8,12 +8,14 @@ app.set('view engine', 'pug');
 const port = process.env.PORT || 4000 
 app.use('/public', express.static(path.join(__dirname, 'public')));
 const { list } = require('./public/Extra/projectlist.js');
+const { certlist } = require('./public/Extra/certlist.js');
+
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 app.get('/Home', (req, res) =>{
-    res.render('home.pug');
+    res.render('home.pug', {list : list, certlist : certlist});
 });
 
 app.get('/', (req, res) =>{
@@ -34,10 +36,9 @@ app.get('/Projects', (req, res) =>{
 
 app.get('/Projects/:project', (req, res) =>{
     const name = req.params.project;
-    console.log(name);
     let project = {};
     for (let item of list) {
-        if (item.project === decodeURIComponent(name)){
+        if (item.project === name){
             project = item;
         }
     }

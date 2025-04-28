@@ -4,6 +4,16 @@ block title
 block content 
   div.projects
     div.projectchart
-      h1 Projects
-      p.home pp poo poo
-    div.projectsneak
+      table
+        thead
+          tr
+            th Project Name 
+            th Quick Description 
+            th Progress
+        tbody 
+          each project in list 
+            tr.row
+              td.projectname 
+                a.projectname(href=`/Projects/${project.project}`) #{project.project}
+              td #{project.synposis}
+              td #{project.progress}

@@ -3,6 +3,14 @@ block title
   title= q.project
 block content
   div.overview
-    h1= q.project 
+    h1= q.project
+    h3= q.progress
     div.description
       p.description= q.description
+    div.screenshots
+      each img in q.images
+        if img.slides
+          div.clusters
+            each item in img.slides
+              img(src=`${item}`, alt=`${item}`)
+            p.comments= img.comment
